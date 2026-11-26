@@ -32,7 +32,7 @@ ia/
 │   ├── estacao_balanca.py        estação completa: comanda → balança → câmera → API
 │   └── sincronizar_classes.py    alinha dataset.yaml com os ingredientes do banco
 ├── modelos/
-│   └── tasteflow-seg-demo.pt     modelo de demonstração (6,8 MB)
+    └── tasteflow-seg-demo.pt     modelo de demonstração (6,8 MB)
 ```
 
 ## Instalação
