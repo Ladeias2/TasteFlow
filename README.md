@@ -2,7 +2,7 @@
 
 > Plataforma de inteligência operacional para restaurantes de autosserviço por quilo: **custo real por cliente, fluxo, ciclo das mesas, satisfação e desperdício** numa só base de dados.
 
-📄 **[Documentação completa](docs/DOCUMENTACAO.md)** · 🎬 **[Vídeo (2 min)](video/link-video.md)** · 📊 **[Slides](slides/TasteFlow.pptx)** · 🗄️ **[Banco de dados](database/)**
+📄 **[Documentação completa](docs/DOCUMENTACAO.md)** · 🎬 **[Vídeo (2 min)](video/link-video.md)** · 📊 **[Slides](slides/)** · 🗄️ **[Banco de dados](database/)**
 
 ---
 
