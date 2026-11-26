@@ -1,0 +1,17 @@
+fastapi>=0.110
+uvicorn[standard]>=0.29
+sqlalchemy>=2.0
+pymysql>=1.1
+cryptography>=42          # autenticação caching_sha2_password do MySQL 8
+python-multipart>=0.0.9   # upload da foto do prato
+pydantic>=2.6
+
+# Testes
+pytest>=8.0
+httpx>=0.27
+
+# Visão computacional (opcional)
+#   /pesagens/foto e /sobras/foto:      ultralytics
+#   /avaliacoes/leitura-otica (cartão): opencv-python-headless
+# ultralytics>=8.1
+# opencv-python-headless>=4.9

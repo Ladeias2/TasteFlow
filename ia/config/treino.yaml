@@ -1,0 +1,47 @@
+# TasteFlow — hiperparâmetros de treino (YOLOv8 segmentação)
+#
+# Perfis:
+#   producao     → treino real com fotos anotadas do restaurante (GPU recomendada)
+#   demonstracao → treino curto em CPU com pratos sintéticos, só para validar o pipeline
+
+producao:
+  modelo_base: modelos/yolov8s-seg.pt   # pré-treinado no COCO (transfer learning); baixado se não existir
+  imgsz: 640
+  epochs: 150
+  patience: 30                  # para cedo se a validação não melhorar
+  batch: 16
+  optimizer: auto
+  lr0: 0.01
+  cos_lr: true
+  # Aumentos de dados adequados a fotos de cima do prato:
+  degrees: 180                  # o prato pode estar em qualquer rotação
+  flipud: 0.5
+  fliplr: 0.5
+  hsv_h: 0.010                  # pouca variação de matiz: a cor identifica o alimento
+  hsv_s: 0.5
+  hsv_v: 0.3                    # iluminação do buffet varia
+  scale: 0.3
+  mosaic: 0.5
+  copy_paste: 0.3               # recorta alimentos de um prato e cola em outro
+  device: 0                     # GPU; use "cpu" se não houver
+
+demonstracao:
+  modelo_base: modelos/yolov8n-seg.pt   # baixado automaticamente se não existir
+  imgsz: 320
+  epochs: 25
+  patience: 10
+  batch: 16
+  optimizer: auto
+  lr0: 0.01
+  cos_lr: true
+  degrees: 180
+  flipud: 0.5
+  fliplr: 0.5
+  hsv_h: 0.010
+  hsv_s: 0.4
+  hsv_v: 0.3
+  scale: 0.3
+  mosaic: 0.5
+  copy_paste: 0.0
+  device: cpu
+  workers: 2

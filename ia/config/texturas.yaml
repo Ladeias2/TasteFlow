@@ -1,0 +1,39 @@
+# TasteFlow — banco de texturas reais para pratos sintéticos
+#
+# Cada recorte é uma caixa [x1, y1, x2, y2] (pixels) dentro de uma foto de
+# referência que contém SÓ aquele alimento. Os recortes viram texturas usadas
+# pelo gerador de pratos sintéticos (copy-paste augmentation).
+#
+# As fotos ficam em fotos_referencia/ e NÃO vão para o repositório
+# (verifique os direitos de uso antes de publicar qualquer imagem).
+# Para adicionar um alimento: tire uma foto de cima, abra num editor que
+# mostre coordenadas e anote uma caixa contida no alimento.
+
+fotos_dir: ../fotos_referencia
+saida_dir: ../dados/texturas
+
+recortes:
+  prato1.png:                    # feijoada (540 x 360)
+    salada_folhas: [[55, 150, 165, 200]]          # couve
+    tomate:        [[95, 218, 175, 285]]          # vinagrete
+    farofa:        [[220, 215, 365, 315]]
+    feijao:        [[300, 160, 415, 235]]          # feijão preto
+    arroz_branco:  [[232, 152, 278, 192]]
+  prato2.png:                    # prato colorido (493 x 740)
+    farofa:        [[82, 312, 148, 378]]
+    salada_folhas: [[105, 385, 175, 470]]          # couve
+    arroz_branco:  [[292, 422, 375, 495]]
+    linguica:      [[332, 292, 384, 338], [342, 352, 405, 382], [188, 312, 222, 345]]
+    tomate:        [[192, 362, 268, 418]]          # vinagrete
+  prato3.png:                    # prato feito (875 x 485)
+    feijao:        [[262, 85, 445, 215]]           # feijão carioca
+    alcatra:       [[452, 85, 595, 215]]           # bife
+    arroz_branco:  [[222, 252, 365, 398]]
+    tomate:        [[420, 270, 490, 352]]          # tomate em rodelas
+    salada_folhas: [[542, 222, 648, 330], [422, 385, 555, 438]]   # alface
+
+# Fundos (mesa, toalha) para variar o cenário
+fundos:
+  prato1.png: [[0, 0, 150, 90]]
+  prato2.png: [[0, 0, 490, 160], [0, 600, 490, 740]]
+  prato3.png: [[0, 0, 110, 480], [745, 0, 875, 480]]

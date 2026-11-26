@@ -1,0 +1,33 @@
+# TasteFlow — gerador de pratos sintéticos
+# Usado para validar o pipeline e para pré-treinar antes das fotos reais.
+
+imagens_treino: 360
+imagens_validacao: 80
+imagens_teste: 40
+tamanho: 640                 # lado da imagem (px)
+itens_por_prato: [3, 6]      # mínimo e máximo de alimentos por prato
+area_minima_px: 120          # regiões visíveis menores que isto não viram rótulo
+semente: 42
+
+# Probabilidade relativa de cada alimento aparecer (cardápio típico).
+# Alimentos sem textura real em texturas.yaml usam textura procedural.
+frequencia:
+  arroz_branco: 0.85
+  feijao: 0.75
+  salada_folhas: 0.6
+  tomate: 0.45
+  farofa: 0.35
+  alcatra: 0.35
+  linguica: 0.35
+  batata_frita: 0.25
+  frango: 0.25
+  macarrao: 0.2
+  picanha: 0.2
+  file_mignon: 0.15
+  arroz_integral: 0.1
+  abobrinha: 0.1
+  couve_flor: 0.1
+  lasanha: 0.1
+  strogonoff: 0.15
+  camarao: 0.05
+  pudim: 0.05

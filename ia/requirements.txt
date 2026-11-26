@@ -1,0 +1,11 @@
+# Ambiente de IA (treino e estação da balança)
+ultralytics>=8.1          # YOLOv8 (instala PyTorch)
+opencv-python-headless>=4.9
+numpy>=1.26
+pyyaml>=6.0
+requests>=2.31
+pyserial>=3.5             # leitura da balança pela porta serial
+
+# Exportação e execução em ONNX (opcional, para a estação sem PyTorch)
+# onnx>=1.15
+# onnxruntime>=1.17

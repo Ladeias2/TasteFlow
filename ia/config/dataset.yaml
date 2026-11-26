@@ -1,0 +1,35 @@
+# TasteFlow — dataset de segmentação de alimentos (formato Ultralytics YOLO-seg)
+#
+# Os nomes das classes DEVEM ser idênticos a ingrediente.rotulo_ia no banco:
+# é por eles que a API liga cada máscara ao custo/kg do ingrediente.
+# Para atualizar a partir do banco:  python scripts/sincronizar_classes.py
+#
+# Estrutura esperada em `path`:
+#   images/train  images/val  images/test
+#   labels/train  labels/val  labels/test   (um .txt por imagem: classe + polígono normalizado)
+
+path: ../dados/dataset          # relativo a este arquivo
+train: images/train
+val: images/val
+test: images/test
+
+names:
+  0: arroz_branco
+  1: arroz_integral
+  2: feijao
+  3: farofa
+  4: batata_frita
+  5: salada_folhas
+  6: tomate
+  7: abobrinha
+  8: couve_flor
+  9: macarrao
+  10: lasanha
+  11: frango
+  12: strogonoff
+  13: linguica
+  14: alcatra
+  15: picanha
+  16: file_mignon
+  17: camarao
+  18: pudim

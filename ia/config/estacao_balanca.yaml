@@ -1,0 +1,33 @@
+# TasteFlow — estação balança + câmera (inferência na borda)
+#
+# Fluxo: o cliente põe o prato → a balança estabiliza → a câmera fotografa →
+# o modelo identifica os alimentos → POST /pesagens com peso + composição.
+
+api:
+  url: http://localhost:8000
+  timeout_s: 5
+
+camera:
+  indice: 0                  # 0 = primeira câmera USB
+  largura: 1280
+  altura: 720
+  recorte_prato: null        # [x1, y1, x2, y2] se a câmera enxergar além da balança
+
+balanca:
+  modo: simulada             # simulada | serial
+  porta: COM3                # Windows: COM3 · Linux: /dev/ttyUSB0
+  baudrate: 9600
+  # Expressão regular que extrai o peso da linha enviada pela balança.
+  # Ex. de linha: "ST,GS,+0.852kg" → grupo 1 = 0.852
+  regex_peso: '([+-]?\d+[.,]\d+)\s*kg'
+  leituras_estaveis: 3       # leituras iguais seguidas para considerar estável
+  tolerancia_g: 5
+  peso_minimo_g: 80          # abaixo disso, considera balança vazia
+
+modelo:
+  caminho: ../modelos/tasteflow-seg-demo.pt
+  confianca_minima: 0.25
+  imgsz: 320                 # use o mesmo tamanho do treino
+
+preco_kg: null               # null = a API aplica o preço do dia
+salvar_fotos_em: ../dados/fotos_estacao

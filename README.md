@@ -53,6 +53,7 @@ O banco foi testado com **14 dias simulados** (1.950 clientes, 812 ciclos de mes
 - 🧹 **Metade** dos 9 minutos de liberação da mesa é espera até a limpeza começar.
 - ⭐ A satisfação com o ambiente cai de **77,4%** (fila de até 5 min) para **16,8%** (fila de 15 min ou mais).
 - ☕ O brinde de café custa **0,55% da receita** do *buffet* e mede quantos clientes voltam em uma semana.
+- 🤖 O modelo de visão de demonstração identifica os alimentos com **mAP50 de 0,978** em pratos sintéticos e acertou os 5 itens de um prato feito real. O modelo de produção precisa de fotos reais anotadas ([ia/README.md](ia/README.md)).
 - 🗑️ Desperdício de **15,9%** da produção. Os legumes passam de 35%, mas a **picanha** tem o maior custo absoluto de desperdício.
 
 *Os números são de uma simulação e validam o funcionamento do modelo. Eles não descrevem o restaurante real.*
@@ -79,7 +80,7 @@ O banco foi testado com **14 dias simulados** (1.950 clientes, 812 ciclos de mes
 ├── docs/img/                 capturas de tela
 ├── database/                 scripts MySQL (schema, regras, views, dados simulados)
 ├── backend/                  API FastAPI + testes
-├── ia/                       modelo de visão computacional
+├── ia/                       visão computacional: configs, treino, modelo de demonstração, estação da balança
 ├── frontend/                 painel web
 ├── slides/                   apresentação
 ├── video/                    link do vídeo
@@ -117,8 +118,9 @@ Detalhes em [backend/README.md](backend/README.md) e no [Apêndice B da document
 | Frente | Status |
 |---|---|
 | Banco de dados (17 tabelas, 14 views, trigger, 4 procedures) | ✅ Implementado e testado |
-| Back-end (API FastAPI, 59 testes) | ✅ Implementado e testado |
-| IA de visão (YOLOv8-seg) | ⚙️ Integração pronta na API; modelo a treinar com fotos reais |
+| Back-end (API FastAPI, 60 testes) | ✅ Implementado e testado |
+| IA de visão (YOLOv8-seg) | ✅ Pipeline completo e modelo de demonstração (pratos sintéticos); ⚙️ modelo de produção depende de fotos reais anotadas |
+| Estação da balança (borda) | ✅ Implementada: comanda → balança → câmera → modelo → API |
 | Leitura óptica do cartão (OpenCV) | ✅ Implementada e testada com cartões sintéticos |
 | Front-end / dashboard | 🔜 Consome `/kpis` e `/mesas` |
 
