@@ -2,7 +2,7 @@
 
 > Plataforma de inteligência operacional para restaurantes de autosserviço por quilo: **custo real por cliente, fluxo, ciclo das mesas, satisfação e desperdício** numa só base de dados.
 
-📄 **[Documentação completa](docs/DOCUMENTACAO.md)** · 🎬 **[Vídeo (2 min)](https://github.com/Ladeias2/TasteFlow)** · 📊 **[Slides](slides/)** · 🗄️ **[Banco de dados](database/)**
+📄 **[Documentação completa](docs/DOCUMENTACAO.md)** · 🎬 🎬 **[Vídeo (2 min)]([COLE_O_LINK_DO_ONEDRIVE_AQUI](https://1drv.ms/v/c/2928c3db6e6cec4f/IQCsygT6iyZRRL05Q5gBQjZXAdFwKcyXn8u55G4MDrnD2IQ?e=clVKlY))** · 📊 **[Slides](slides/)** · 🗄️ **[Banco de dados](database/)**
 
 ---
 
