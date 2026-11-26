@@ -33,8 +33,6 @@ ia/
 │   └── sincronizar_classes.py    alinha dataset.yaml com os ingredientes do banco
 ├── modelos/
 │   └── tasteflow-seg-demo.pt     modelo de demonstração (6,8 MB)
-├── fotos_referencia/             fotos para texturas (não vão para o Git)
-└── dados/                        dataset, texturas e saídas (não vão para o Git)
 ```
 
 ## Instalação
